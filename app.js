@@ -49,11 +49,11 @@ app.post("/createUser", function (req, res) {
 
         account.save((e) => {
             if (!e) {
-                res.status(201).redirect("/");
+                res.redirect(201, "/");
                 // res.redirect("/");
             }
             else {
-                res.status(500).redirect("/");
+                res.status(500).send();
                 // res.send("Server error - yikes!");
             }
         });
