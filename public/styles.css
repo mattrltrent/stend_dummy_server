@@ -17,6 +17,12 @@ h1 {
     color: white;
 }
 
+.reload {
+    background-color: lightseagreen;
+    color: white;
+    margin: 5px 0;
+}
+
 br {
     height: 3;
     color: black;

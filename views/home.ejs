@@ -17,13 +17,21 @@
     <h1>Dummy Stend DB (barebones, simply for testing)</h1>
     <p>This is a database to be used for testing with the frontend team -Matt</p>
     <form action="/delete" method="post">
-        <button type="submit" class="danger">DELETE FULL DATABASE</button>
+        <button type="submit" class="danger">DELETE FULL DATABASE (irreversible)</button>
+    </form>
+    <form action="/refresh" method="post">
+        <button type="submit" class="reload">REFRESH PAGE (needed to see users added via POST request)</button>
     </form>
     <p>Create a user by posting to <b>https://mysterious-reaches-53974.herokuapp.com/createUser</b> and <b>POST</b> a JS
         object
-        with 3 fields: <b>username</b>, <b>email</b>, and <b>password</b> (or just do it
+        with 3 fields: <b>username</b>, <b>email</b>, and <b>password</b> (all strings), then click the <b>REFRESH
+            PAGE</b> button to
+        see
+        them added (or just do it
         through the GUI
         here):</p>
+    <p>As dummy error handling, a status code of <b>400 (bad request)</b> will be sent if any of the post fields
+        (username, email, password) are left completely blank.</p>
     <form class="item" action="/createUser" method="post">
         <input type="text" name="username" placeholder="Username" autocomplete="off">
         <input type="text" name="email" placeholder="Email" autocomplete="off">

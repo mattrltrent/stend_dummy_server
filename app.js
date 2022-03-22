@@ -34,21 +34,28 @@ app.get("/", (req, res) => {
 });
 
 app.post("/createUser", function (req, res) {
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+    if (username == "" || email == "" || password == "") {
+        res.status(400).send("One of the fields is blank! UH OH!");
+    }
+    else {
+        const account = new Account({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
 
-    const account = new Account({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-    });
-
-    account.save((e) => {
-        if (!e) {
-            res.redirect("/");
-        }
-        else {
-            res.send("Server error - yikes!");
-        }
-    });
+        account.save((e) => {
+            if (!e) {
+                res.redirect("/");
+            }
+            else {
+                res.send("Server error - yikes!");
+            }
+        });
+    }
 });
 
 app.post("/delete", (req, res) => {
@@ -61,6 +68,10 @@ app.post("/delete", (req, res) => {
             res.send("Server error - yikes!");
         }
     });
+});
+
+app.post("/refresh", (req, res) => {
+    res.redirect("/");
 });
 
 
