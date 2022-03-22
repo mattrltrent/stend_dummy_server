@@ -1,0 +1,39 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding-bottom: -15px;
+}
+
+.danger {
+    background-color: red;
+    color: white;
+}
+
+.safe {
+    background-color: green;
+    color: white;
+}
+
+br {
+    height: 3;
+    color: black;
+}
+
+h3 {
+    margin: 0;
+}
+
+.bottom {
+    padding-bottom: 10px;
+}
+
+input {
+    display: block;
+    padding: 5px 0;
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 200px;
+}

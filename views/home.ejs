@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="javascript" href="app.js">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Dummy Stend DB</h1>
+    <p>This is a database to be used for testing with the frontend team -Matt</p>
+    <form action="/delete" method="post">
+        <button type="submit" class="danger">DELETE FULL DATABASE</button>
+    </form>
+    <p>Create a user by posting to <b>URLHERE/createUser</b> (or just do it through the GUI here):</p>
+    <form class="item" action="/createUser" method="post">
+        <input type="text" name="username" placeholder="Username" autocomplete="off">
+        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input type="text" name="password" placeholder="Password" autocomplete="off">
+        <button class="safe" type="submit">Create user</button>
+    </form>
+    <h5>The DB of current (TEST) users is below:</h5>
+    <hr>
+    <% posts.forEach(function(post){ %>
+        <p>
+            <u>Username:</u>
+            <%=post.username%>
+        </p>
+        <p>
+            <u>Email:</u>
+            <%=post.email%>
+        </p>
+        <p class="bottom">
+            <u>Password:</u>
+            <%=post.password%> <b>(will be hashed I assume)</b>
+        </p>
+        <hr>
+        <% }) %>
+</body>
+
+</html>
