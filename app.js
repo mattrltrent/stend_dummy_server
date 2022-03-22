@@ -38,7 +38,7 @@ app.post("/createUser", function (req, res) {
     const email = req.body.email;
     const password = req.body.password;
     if (username == "" || email == "" || password == "") {
-        res.status(400).send("One of the fields is blank! UH OH!");
+        res.status(400).send(); // at least one of the fields is blank
     }
     else {
         const account = new Account({
@@ -49,10 +49,12 @@ app.post("/createUser", function (req, res) {
 
         account.save((e) => {
             if (!e) {
-                res.redirect("/");
+                res.status(201).redirect("/");
+                // res.redirect("/");
             }
             else {
-                res.send("Server error - yikes!");
+                res.status(500).redirect("/");
+                // res.send("Server error - yikes!");
             }
         });
     }
