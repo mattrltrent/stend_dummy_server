@@ -57,7 +57,7 @@
         </p>
         <p class="bottom">
             <u>Password:</u>
-            <%=post.password%> <b>(will be hashed I assume)</b>
+            <%=post.password%> <b>(will be hashed I assume via bcrypt with ~10 salting rounds?)</b>
         </p>
         <hr>
         <% }) %>
