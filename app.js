@@ -64,6 +64,8 @@ app.post("/delete", (req, res) => {
 });
 
 
-app.listen(211, () => {
-    console.log("Server started on port 211");
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 211;
+}
+app.listen(port);
