@@ -50,9 +50,11 @@ app.post("/createUser", function (req, res) {
         account.save((e) => {
             if (!e) {
                 res.status(201);
+                res.send();
             }
             else {
                 res.status(500);
+                res.send();
             }
         });
     }
