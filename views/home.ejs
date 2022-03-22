@@ -14,8 +14,7 @@
 </head>
 
 <body>
-    <h1>Dummy Stend DB (barebones, simply for testing)</h1>
-    <p>This is a database to be used for testing with the frontend team -Matt</p>
+    <h1>Dummy Stend DB/backend (barebones, simply for testing frontend stuff)</h1>
     <form action="/delete" method="post">
         <button type="submit" class="danger">DELETE FULL DATABASE (irreversible)</button>
     </form>
@@ -30,8 +29,14 @@
         them added (or just do it
         through the GUI
         here):</p>
-    <p>As dummy error handling, a status code of <b>400 (bad request)</b> will be sent if any of the post fields
-        (username, email, password) are left completely blank.</p>
+    <p><u>Dummy Error Handling:</u></p>
+    <ul>
+        <li>Status code <b>400</b> returned: Bad request. Triggered when at least one of the post fields
+            (username, email, password) is completely blank.</li>
+        <li>Status code <b>201</b> returned: User created. User creation post successful</li>
+        <li>Status code <b>500</b> returned: Something went wrong with the server, idk what lol</li>
+    </ul>
+
     <form class="item" action="/createUser" method="post">
         <input type="text" name="username" placeholder="Username" autocomplete="off">
         <input type="text" name="email" placeholder="Email" autocomplete="off">
