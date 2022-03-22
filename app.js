@@ -71,15 +71,21 @@ app.post("/createUserForm", function (req, res) {
 
         account.save((e) => {
             if (!e) {
-                alert("Status code 201: success!");
+                res.render("status", {
+                    data: "201"
+                });
             }
             else {
-                alert("Status code 500: idk what went wrong, sorry.");
+                res.render("status", {
+                    data: "500"
+                });
             }
         });
     }
     else {
-        alert("Status code 400: please make sure each field includes content.");
+        res.render("status", {
+            data: "400"
+        });
     }
 });
 

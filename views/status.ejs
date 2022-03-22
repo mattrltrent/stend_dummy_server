@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+    <title>Status Code Page</title>
+</head>
+
+<body>
+    <h1>Status code: <%= data %>
+    </h1>
+    <a href="/">Return to home</a>
+    <ul>
+        <li>Status code <b>400</b> returned: Bad request. Triggered when at least one of the post fields
+            (username, email, password) is completely blank.</li>
+        <li>Status code <b>201</b> returned: User created. User creation post successful</li>
+        <li>Status code <b>500</b> returned: Something went wrong with the server, idk what lol</li>
+    </ul>
+</body>
+
+</html>
