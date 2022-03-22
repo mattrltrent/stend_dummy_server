@@ -37,10 +37,7 @@ app.post("/createUser", function (req, res) {
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
-    if (username == "" || email == "" || password == "") {
-        res.status(400).send(); // at least one of the fields is blank
-    }
-    else {
+    if (username != "" && email != "" && password != "") {
         const account = new Account({
             username: req.body.username,
             email: req.body.email,
@@ -49,12 +46,40 @@ app.post("/createUser", function (req, res) {
 
         account.save((e) => {
             if (!e) {
-                res.redirect("/");
+                res.status(201).send();
             }
             else {
-                res.redirect("/");
+                res.status(500).send();
             }
         });
+    }
+    else {
+        res.status(400).send();
+    }
+});
+
+app.post("/createUserForm", function (req, res) {
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+    if (username != "" && email != "" && password != "") {
+        const account = new Account({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        account.save((e) => {
+            if (!e) {
+                alert("Status code 201: success!");
+            }
+            else {
+                alert("Status code 500: idk what went wrong, sorry.");
+            }
+        });
+    }
+    else {
+        alert("Status code 400: please make sure each field includes content.");
     }
 });
 
